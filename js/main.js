@@ -1,16 +1,21 @@
 //braços >>>> buscando as variaveis para incremento e decremento - começando com somar pq o input começa com zero
 const somar = document.querySelector("#somar");
 const subtrair = document.querySelector("#subtrair");
-const braco = document.querySelector("#braco");
-//criando evento para somar atributos
-somar.addEventListener("click", () => {manipulaDados('somar')});
-//criando evento para subtrair atributos
-subtrair.addEventListener("click", () => {manipulaDados('subtrair')});
+//variavel com todos os controles-ajuste
+const controle = document.querySelectorAll('.controle-ajuste');
+
+controle.forEach( (elemento) => {
+    elemento.addEventListener('click', (evento) => {
+        manipulaDados(evento.target.textContent, evento.target.parentNode)
+    })
+})
+
 //função para manupulação de dados dos atributos
-function manipulaDados(operacao) {
-  if (operacao === "somar") {
-    braco.value = Number(braco.value) + 1;
+function manipulaDados(operacao, controle) {
+    const peca = controle.querySelector(".controle-contador");
+  if (operacao === "-") {
+    peca.value = Number(peca.value) - 1;
   } else {
-    braco.value = Number(braco.value) - 1;
+    peca.value = Number(peca.value) + 1;
   }
 }
