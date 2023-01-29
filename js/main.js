@@ -1,11 +1,11 @@
-const robotron = document.querySelector("#robotron");
+//braços >>>> buscando as variaveis - começando com somar pq o input começa com zero
+const somar = document.querySelector('#somar')
+const subtrair = document.querySelector('#subtrair')
+const braco = document.querySelector('#braco')
 
-robotron.addEventListener("click", (evento) => {
-  console.log(evento);
-});
-
-//
-function dizOi(nome) {
-  console.log(nome + ' mestre supremo');
-  console.log('bem-vindo, ao Robotron ')
-}
+somar.addEventListener('click', (evento) => {
+    braco.value = Number(braco.value) +1
+})
+subtrair.addEventListener('click', (evento) => {
+    braco.value = Number(braco.value) -1
+})
